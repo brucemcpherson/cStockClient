@@ -33,7 +33,7 @@ var Include = (function (ns) {
       getLibraryNamespace(library).Include.gs (scripts) :
       '<script>\n' + scripts.map (function (d) {
         // getResource returns a blob
-        return library ? getLibraryNamespace(library).Include.gs (scripts) : ScriptApp.getResource(d).getDataAsString();
+        return ScriptApp.getResource(d).getDataAsString();
       })
       .join('\n\n') + '</script>\n';
   };
